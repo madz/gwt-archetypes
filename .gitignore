@@ -1,0 +1,11 @@
+/target
+.settings
+.gwt
+.project
+.classpath
+
+gwt-basic/target
+gwt-basic.settings
+gwt-basic.gwt
+gwt-basic.project
+gwt-basic.classpath
