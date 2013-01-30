@@ -6,6 +6,7 @@
     <version>1.250-SNAPSHOT</version>
   </parent>
   <artifactId>gwt-basic</artifactId>
+  <packaging>jar</packaging>
   <properties>
 		<gwt.version>2.5.0</gwt.version>
 		<validation.version>1.0.0.GA</validation.version>

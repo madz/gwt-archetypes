@@ -4,9 +4,9 @@
     xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0 http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd">
     <archetypes>
         <archetype>
-            <groupId>com.github.gwt-archetypes</groupId>
+            <groupId>com.github.archetypes</groupId>
             <artifactId>gwt-basic</artifactId>
-            <version>0.1.250-SNAPSHOT</version>
+            <version>1.250-SNAPSHOT</version>
             <repository></repository>
             <description>Archetype for creating GWT web application</description>
         </archetype>

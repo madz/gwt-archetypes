@@ -19,12 +19,9 @@ Create a project
 ----------------
 
     mvn archetype:generate
-        -DarchetypeGroupId=com.github.gwt-archetypes
+        -DarchetypeGroupId=com.github.archetypes
         -DarchetypeArtifactId=gwt-basic
-        -DarchetypeVersion=0.1.250-SNAPSHOT
-        -DgroupId=my.groupid
-        -DartifactId=my-artifactId
-        -Dversion=version
+        -DarchetypeVersion=1.250-SNAPSHOT
 
 Run the project
 ----------------
