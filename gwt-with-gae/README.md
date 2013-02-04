@@ -1,4 +1,4 @@
-GWT Quickstart Maven Archetype
+GWT/GAE Quickstart Maven Archetype
 =========================================
 
 Summary
@@ -9,13 +9,14 @@ Generated project characteristics
 -------------------------
 * GWT web application for eclipse environment
 * GWT 2.5.0 with configuration
+* GAE 1.7.1
 
 Create a project
 ----------------
 
     mvn archetype:generate
         -DarchetypeGroupId=com.github.archetypes
-        -DarchetypeArtifactId=gwt-basic
+        -DarchetypeArtifactId=gwt-with-gae
         -DarchetypeVersion=1.250-SNAPSHOT
 
 Run the project

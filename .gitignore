@@ -5,7 +5,4 @@
 .classpath
 
 gwt-basic/target
-gwt-basic.settings
-gwt-basic.gwt
-gwt-basic.project
-gwt-basic.classpath
+gwt-with-gae/target
