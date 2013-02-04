@@ -38,6 +38,7 @@
 			<directory>src/main/webapp/WEB-INF</directory>
 			<includes>
 				<include>*.xml</include>
+				<include>*.properties</include>
 			</includes>
 		</fileSet>
 	</fileSets>
