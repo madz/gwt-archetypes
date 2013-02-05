@@ -101,7 +101,7 @@
 						ERROR, WARN, INFO, TRACE, DEBUG, SPAM, or ALL). -->
 
 					<!-- URL that should be automatically opened in the GWT shell (gwt:run). -->
-					<runTarget>index.html</runTarget>
+					<runTarget>App.html</runTarget>
 				</configuration>
 			</plugin>
 			<plugin>

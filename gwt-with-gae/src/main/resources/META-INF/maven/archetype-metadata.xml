@@ -41,5 +41,12 @@
 				<include>*.properties</include>
 			</includes>
 		</fileSet>
+		<fileSet filtered="true">
+			<directory>src/main/META-INF</directory>
+			<includes>
+				<include>*.xml</include>
+				<include>*.properties</include>
+			</includes>
+		</fileSet>
 	</fileSets>
 </archetype-descriptor>

@@ -5,12 +5,16 @@
 	<artifactId>${artifactId}</artifactId>
 	<version>${version}</version>
 	<packaging>war</packaging>
-	<properties>
 	
-	<downloadSources>true</downloadSources>
-		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-		<project.encoding>UTF-8</project.encoding>
+	<!-- Specify hard-coded project properties here -->
+	<properties>
+		<!-- This is just for "eclipse:eclipse" goal to always attempt downloading sources -->
+		<downloadSources>true</downloadSources>
 		
+		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+		 <!-- Sets the project's default encoding.-->
+		<project.encoding>UTF-8</project.encoding>
+
 		<gwt.version>2.5.0</gwt.version>
 		<validation.version>1.0.0.GA</validation.version>
 		<maven.compiler.version>1.6</maven.compiler.version>
@@ -19,7 +23,7 @@
 		<gwt.disableClassMetadata>true</gwt.disableClassMetadata>
 		<gwt.disableCastChecking>true</gwt.disableCastChecking>
 		<gwt.logLevel>TRACE</gwt.logLevel>
-		
+
 		<maven.gae.plugin.version>0.9.4</maven.gae.plugin.version>
 		<gae.version>1.7.1</gae.version>
 		<gae.runtime>1.7.0</gae.runtime>
@@ -60,12 +64,14 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- *************************************Goolge App Engine**************************** -->
+		<!-- *************************************Google App Engine**************************** -->
 		<dependency>
 			<groupId>com.google.appengine</groupId>
 			<artifactId>appengine-api-1.0-sdk</artifactId>
 			<version>${gae.version}</version>
 		</dependency>
+		
+		<!-- GAE libraries for local testing as described here: http://code.google.com/appengine/docs/java/howto/unittesting.html -->
 		<dependency>
 			<groupId>com.google.appengine</groupId>
 			<artifactId>appengine-api-stubs</artifactId>
@@ -77,11 +83,6 @@
 			<artifactId>appengine-testing</artifactId>
 			<version>${gae.version}</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.persistence</groupId>
-			<artifactId>persistence-api</artifactId>
-			<version>1.0.2</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -133,7 +134,7 @@
 						ERROR, WARN, INFO, TRACE, DEBUG, SPAM, or ALL). -->
 
 					<!-- URL that should be automatically opened in the GWT shell (gwt:run). -->
-					<runTarget>index.html</runTarget>
+					<runTarget>App.html</runTarget>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -176,25 +177,6 @@
 						</fileset>
 					</filesets>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.7</version>
-				<executions>
-					<execution>
-						<id>add-source</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>${project.build.directory}/generated-sources/apt</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -258,6 +240,7 @@
 					<encoding>${project.encoding}</encoding>
 				</configuration>
 			</plugin>
+			<!-- eclipse plugin -->
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
 				<version>2.8</version>
@@ -278,7 +261,7 @@
 					</additionalBuildcommands>
 					<additionalProjectnatures>
 						<projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
-						<projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
+						<projectnature>com.google.gwt.eclipse.core.gaeNature</projectnature>
 					</additionalProjectnatures>
 					<additionalConfig>
 						<file>
