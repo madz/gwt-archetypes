@@ -1,0 +1,54 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:views="urn:import:${package}.client.view">
+	<ui:style>
+		.northPanel {
+			height: 100%;
+			width: 100%;
+			border: 1px solid gray;
+		}
+		
+		.southPanel {
+			height: 100%;
+			width: 100%;
+			border: 1px solid gray;
+		}
+		
+		.westPanel {
+			height: 100%;
+			width: 100%;
+			border: 1px solid gray;
+		}
+		
+		.eastPanel {
+			height: 100%;
+			width: 100%;
+			border: 1px solid gray;
+		}
+		
+		.centerPanel {
+			height: 100%;
+			width: 100%;
+			border: 1px solid gray;
+		}
+	</ui:style>
+
+	<g:DockLayoutPanel unit="PCT">
+		<g:center type="">
+			<g:SimplePanel ui:field="centerPanel"
+				addStyleNames="{style.centerPanel}" />
+		</g:center>
+		<g:east size="0">
+			<g:SimplePanel ui:field="eastPanel" addStyleNames="{style.eastPanel}" />
+		</g:east>
+		<g:west size="10">
+			<g:SimplePanel ui:field="westPanel" addStyleNames="{style.westPanel}" />
+		</g:west>
+		<g:north size="10">
+			<g:SimplePanel ui:field="northPanel" addStyleNames="{style.northPanel}" />
+		</g:north>
+		<g:south size="10">
+			<g:SimplePanel ui:field="southPanel" addStyleNames="{style.southPanel}" />
+		</g:south>
+	</g:DockLayoutPanel>
+</ui:UiBinder> 

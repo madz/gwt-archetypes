@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0rc1//EN"
+  "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0rc1/distro-source/core/src/gwt-module.dtd">
+<module rename-to="app">
+
+	<inherits name="com.google.gwt.user.User" />
+	<inherits name="com.google.gwt.activity.Activity" />
+	<inherits name="com.google.gwt.place.Place" />
+	<inherits name="com.google.gwt.resources.Resources" />
+	
+	<!-- Google GIN -->
+	<inherits name="com.google.gwt.inject.Inject" />
+
+	<!-- Specify the paths for translatable code -->
+	<source path="client" />
+	<source path="shared" />
+
+	<!-- Specify the app entry point class. -->
+	<entry-point class="${package}.client.App" />
+	
+	<!-- Removes client-side stack trace info (can reduce size up to 15%) -->
+	<set-property name="compiler.stackMode" value="strip" />
+
+	<!-- (only use if you’re not using enums as String values) -->
+	<set-configuration-property name="compiler.enum.obfuscate.names"
+		value="true" />
+
+	<set-configuration-property name="CssResource.obfuscationPrefix"
+		value="empty" />
+
+</module>

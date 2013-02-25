@@ -9,6 +9,7 @@
 		<module>gwt-basic</module>
 		<module>gwt-with-gae</module>
 		<module>gxt-basic</module>
+		<module>gwt-mvp-gin-layout</module>
 	</modules>
 
 	<licenses>

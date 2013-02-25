@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<!-- Can't Inject in Constructor so we will style the Widget using this -->
+	<ui:style>
+		.loading {
+			background-color: #FFCC66;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			border: 1px;
+		}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:PopupPanel styleName="{style.loading}"
+			ui:field="popup">
+			<g:Label ui:field="lblMsg">Loading</g:Label>
+		</g:PopupPanel>
+	</g:HTMLPanel>
+
+</ui:UiBinder> 
