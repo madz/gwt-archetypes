@@ -1,0 +1,9 @@
+.body {
+	border-top: solid #FCFCFC;
+	border-bottom: solid #747675;
+	border-width: 2px 0 1px 0;
+	background: url(/images/bodybg.jpg) repeat top;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}

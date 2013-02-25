@@ -8,6 +8,7 @@
 	<modules>
 		<module>gwt-basic</module>
 		<module>gwt-with-gae</module>
+		<module>gxt-basic</module>
 	</modules>
 
 	<licenses>
