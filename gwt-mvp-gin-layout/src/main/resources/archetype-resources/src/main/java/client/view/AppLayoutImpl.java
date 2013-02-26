@@ -73,18 +73,5 @@ public class AppLayoutImpl implements AppLayout {
 		mainLayoutPanel.setWidgetSize(westPanel, 10);
 		mainLayoutPanel.setWidgetSize(eastPanel, 10);
 	}
-
-	@Override
-	public void setErrorLayout() {
-		
-	}
-
-	@Override
-	public void setLoginLayout() {
-		mainLayoutPanel.setWidgetSize(northPanel, 0);
-		mainLayoutPanel.setWidgetSize(southPanel, 0);
-		mainLayoutPanel.setWidgetSize(westPanel, 0);
-		mainLayoutPanel.setWidgetSize(eastPanel, 0);
-	}
-
+	
 }

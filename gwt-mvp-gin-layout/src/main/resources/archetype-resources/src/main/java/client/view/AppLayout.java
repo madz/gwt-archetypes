@@ -19,14 +19,4 @@ public interface AppLayout {
 
 	void setDefaultLayout();
 	
-	void setErrorLayout();
-	
-	void setLoginLayout();
-
-//	void setNoUserLayout();
-//
-//	void setProfileLayout();
-//
-//	void setErrorLayout();
-
 }
