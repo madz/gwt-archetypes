@@ -33,22 +33,22 @@
 		}
 	</ui:style>
 
-	<g:DockLayoutPanel unit="PCT">
+	<g:DockLayoutPanel unit='EM'>
 		<g:center type="">
-			<g:SimplePanel ui:field="centerPanel"
+			<g:SimpleLayoutPanel ui:field="centerPanel"
 				addStyleNames="{style.centerPanel}" />
 		</g:center>
-		<g:east size="0">
-			<g:SimplePanel ui:field="eastPanel" addStyleNames="{style.eastPanel}" />
+		<g:east size="10">
+			<g:SimpleLayoutPanel ui:field="eastPanel" addStyleNames="{style.eastPanel}" />
 		</g:east>
 		<g:west size="10">
-			<g:SimplePanel ui:field="westPanel" addStyleNames="{style.westPanel}" />
+			<g:SimpleLayoutPanel ui:field="westPanel" addStyleNames="{style.westPanel}" />
 		</g:west>
 		<g:north size="10">
-			<g:SimplePanel ui:field="northPanel" addStyleNames="{style.northPanel}" />
+			<g:SimpleLayoutPanel ui:field="northPanel" addStyleNames="{style.northPanel}" />
 		</g:north>
 		<g:south size="10">
-			<g:SimplePanel ui:field="southPanel" addStyleNames="{style.southPanel}" />
+			<g:SimpleLayoutPanel ui:field="southPanel" addStyleNames="{style.southPanel}" />
 		</g:south>
 	</g:DockLayoutPanel>
 </ui:UiBinder> 

@@ -5,7 +5,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
-import com.google.gwt.user.client.ui.SimplePanel;
+import com.google.gwt.user.client.ui.SimpleLayoutPanel;
 
 public class AppLayoutImpl implements AppLayout {
 
@@ -17,19 +17,19 @@ public class AppLayoutImpl implements AppLayout {
 	private final DockLayoutPanel mainLayoutPanel;
 
 	@UiField
-	SimplePanel northPanel;
+	SimpleLayoutPanel northPanel;
 
 	@UiField
-	SimplePanel eastPanel;
+	SimpleLayoutPanel eastPanel;
 
 	@UiField
-	SimplePanel westPanel;
+	SimpleLayoutPanel westPanel;
 
 	@UiField
-	SimplePanel centerPanel;
+	SimpleLayoutPanel centerPanel;
 
 	@UiField
-	SimplePanel southPanel;
+	SimpleLayoutPanel southPanel;
 
 
 	public AppLayoutImpl() {
