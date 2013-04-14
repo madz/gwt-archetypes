@@ -10,6 +10,7 @@
 		<module>gwt-with-gae</module>
 		<module>gxt-basic</module>
 		<module>gwt-mvp-gin-layout</module>
+		<module>gwt-spring-multi-module</module>
 	</modules>
 
 	<licenses>
