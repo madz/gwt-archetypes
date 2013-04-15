@@ -9,7 +9,6 @@ Generated project characteristics
 -------------------------
 * GWT web application for eclipse environment
 * GWT 2.5.0 with configuration
-* Spring 3.1
 
 Create a project
 ----------------
