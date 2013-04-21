@@ -14,11 +14,7 @@ Generated project characteristics
 
 Create a project
 ----------------
-
-    mvn archetype:generate
-        -DarchetypeGroupId=com.github.archetypes
-        -DarchetypeArtifactId=gwt-mvp-gin-layout
-        -DarchetypeVersion=1.250-SNAPSHOT
+mvn archetype:generate -DarchetypeGroupId=com.github.archetypes -DarchetypeArtifactId=gwt-mvp-gin-layout -DarchetypeVersion=1.250-SNAPSHOT
 
 Run the project
 ----------------

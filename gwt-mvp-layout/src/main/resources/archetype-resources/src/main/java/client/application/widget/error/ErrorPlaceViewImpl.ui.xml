@@ -1,0 +1,23 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+    <ui:style>
+
+    </ui:style>
+
+    <g:HTMLPanel>
+        <g:HorizontalPanel width="100%" horizontalAlignment="ALIGN_CENTER">
+            <g:HTML>
+                <b>404.</b>
+                <ins>That’s an error.</ins>
+                <p>The requested URL was not found on this server.</p>
+                <ins>That’s all we know.</ins>
+            </g:HTML>
+        </g:HorizontalPanel>
+    </g:HTMLPanel>
+
+</ui:UiBinder>

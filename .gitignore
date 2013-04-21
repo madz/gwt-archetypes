@@ -1,11 +1,24 @@
+gwt-archetypes.iml
 /target
 .settings
 .gwt
 .project
 .classpath
+.idea
 
 gwt-basic/target
+gwt-basic.iml
+
 gwt-with-gae/target
+gwt-with-gae.iml
+
 gwt-mvp-gin-layout/target
+gwt-mvp-gin-layout.iml
+gwt-mvp-layout/target
+gwt-mvp-layout.iml
+
 gxt-basic/target
+gxt-basic.iml
+
 gwt-spring-multi-module/target
+gwt-spring-multi-module.iml

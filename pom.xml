@@ -11,7 +11,8 @@
 		<module>gxt-basic</module>
 		<module>gwt-mvp-gin-layout</module>
 		<module>gwt-spring-multi-module</module>
-	</modules>
+        <module>gwt-mvp-layout</module>
+    </modules>
 
 	<licenses>
 		<license>

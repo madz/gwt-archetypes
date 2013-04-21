@@ -12,8 +12,7 @@ Generated project characteristics
 
 Create a project
 ----------------
-
-    mvn archetype:generate -DarchetypeGroupId=com.github.archetypes -DarchetypeArtifactId=gwt-spring-multi-module -DarchetypeVersion=1.250-SNAPSHOT
+mvn archetype:generate -DarchetypeGroupId=com.github.archetypes -DarchetypeArtifactId=gwt-spring-multi-module -DarchetypeVersion=1.250-SNAPSHOT
 
 Run the project
 ----------------
