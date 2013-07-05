@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	<properties>
 		<project.encoding>UTF-8</project.encoding>
-		<gwt.version>2.5.0</gwt.version>
+		<gwt.version>2.5.1</gwt.version>
 		<gxt.version>3.0.1</gxt.version>
 		<validation.version>1.0.0.GA</validation.version>
 		

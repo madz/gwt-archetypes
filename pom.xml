@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.archetypes</groupId>
 	<artifactId>gwt-archetypes</artifactId>
-	<version>1.250-SNAPSHOT</version>
+	<version>1.251-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>gwt-basic</module>

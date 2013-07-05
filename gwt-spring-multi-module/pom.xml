@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.github.archetypes</groupId>
     <artifactId>gwt-archetypes</artifactId>
-    <version>1.250-SNAPSHOT</version>
+    <version>1.251-SNAPSHOT</version>
   </parent>
   <artifactId>gwt-spring-multi-module</artifactId>
   <packaging>jar</packaging>

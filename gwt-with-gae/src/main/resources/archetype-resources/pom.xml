@@ -5,292 +5,331 @@
 	<artifactId>${artifactId}</artifactId>
 	<version>${version}</version>
 	<packaging>war</packaging>
-	
-	<!-- Specify hard-coded project properties here -->
-	<properties>
-		<!-- This is just for "eclipse:eclipse" goal to always attempt downloading sources -->
-		<downloadSources>true</downloadSources>
-		
-		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-		 <!-- Sets the project's default encoding.-->
-		<project.encoding>UTF-8</project.encoding>
 
-		<gwt.version>2.5.0</gwt.version>
-		<validation.version>1.0.0.GA</validation.version>
-		<maven.compiler.version>1.6</maven.compiler.version>
+    <!-- Specify hard-coded project properties here -->
+    <properties>
+        <!-- This is just for "eclipse:eclipse" goal to always attempt downloading sources -->
+        <downloadSources>true</downloadSources>
 
-		<gwt.enableClosureCompiler>true</gwt.enableClosureCompiler>
-		<gwt.disableClassMetadata>true</gwt.disableClassMetadata>
-		<gwt.disableCastChecking>true</gwt.disableCastChecking>
-		<gwt.logLevel>TRACE</gwt.logLevel>
+        <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+        <!-- Sets the project's default encoding.-->
+        <project.encoding>UTF-8</project.encoding>
 
-		<maven.gae.plugin.version>0.9.4</maven.gae.plugin.version>
-		<gae.version>1.7.1</gae.version>
-		<gae.runtime>1.7.0</gae.runtime>
-		<google.app.id>your_app_id</google.app.id>
-		<gae.home>${user.home}/.m2/repository/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}</gae.home>
-	</properties>
+        <gwt.version>2.5.1</gwt.version>
+        <validation.version>1.0.0.GA</validation.version>
+        <maven.compiler.version>1.7</maven.compiler.version>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-servlet</artifactId>
-			<version>${gwt.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-user</artifactId>
-			<version>${gwt.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-dev</artifactId>
-			<version>${gwt.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>${validation.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>${validation.version}</version>
-			<classifier>sources</classifier>
-			<scope>provided</scope>
-		</dependency>
+        <gwt.enableClosureCompiler>true</gwt.enableClosureCompiler>
+        <gwt.disableClassMetadata>true</gwt.disableClassMetadata>
+        <gwt.disableCastChecking>true</gwt.disableCastChecking>
+        <gwt.logLevel>TRACE</gwt.logLevel>
 
-		<!-- *************************************Google App Engine**************************** -->
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-api-1.0-sdk</artifactId>
-			<version>${gae.version}</version>
-		</dependency>
-		
-		<!-- GAE libraries for local testing as described here: http://code.google.com/appengine/docs/java/howto/unittesting.html -->
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-api-stubs</artifactId>
-			<version>${gae.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-testing</artifactId>
-			<version>${gae.version}</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-	<build>
-		<sourceDirectory>src/main/java</sourceDirectory>
-		<testSourceDirectory>src/test/java</testSourceDirectory>
-		<outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
-		<testOutputDirectory>target/test-classes</testOutputDirectory>
-		<plugins>
-			<!-- GWT Maven Plugin -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>gwt-maven-plugin</artifactId>
-				<version>${gwt.version}</version>
-				<executions>
-					<execution>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>compile</goal>
-							<goal>test</goal>
-							<goal>resources</goal>
-						</goals>
-					</execution>
-				</executions>
-				<!-- Plugin configuration. There are many available options, see gwt-maven-plugin 
-					documentation at codehaus.org -->
-				<configuration>
-					<modules>
-						<module>${groupId}.App</module>
-					</modules>
-					<hostedWebapp>${webappDirectory}</hostedWebapp>
-					<compileReport>true</compileReport>
-					<copyWebapp>true</copyWebapp>
-					<localWorkers>2</localWorkers>
-					<webXml>${baseDir}/${webappDirectory}/WEB-INF/web.xml</webXml>
+        <maven.gae.plugin.version>0.9.5</maven.gae.plugin.version>
+        <gae.version>1.8.1</gae.version>
+        <google.app.id>your_app_id</google.app.id>
+        <!--<gae.home>${user.home}/.m2/repository/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}</gae.home>-->
+        <gae.home>${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}</gae.home>
+    </properties>
 
-					<strict>true</strict><!-- add -strict parameter to the compiler command 
+    <dependencies>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <version>${gwt.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <version>${gwt.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation.version}</version>
+            <classifier>sources</classifier>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- *************************************Google App Engine**************************** -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${gae.version}</version>
+        </dependency>
+
+        <!-- Google App Engine Runtime Dependencies -->
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-jta_1.1_spec</artifactId>
+            <version>1.1.1</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-jpa_3.0_spec</artifactId>
+            <version>1.1.1</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.jdo</groupId>
+            <artifactId>jdo2-api</artifactId>
+            <version>2.3-eb</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-core</artifactId>
+            <version>1.1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine.orm</groupId>
+            <artifactId>datanucleus-appengine</artifactId>
+            <version>1.0.10</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-jpa</artifactId>
+            <version>1.1.5</version>
+            <scope>runtime</scope>
+        </dependency>
+
+
+        <!-- App Engine Runtime Dependencies -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-tools-sdk</artifactId>
+            <version>${gae.version}</version>
+        </dependency>
+
+        <!-- GAE libraries for local testing as described here: http://code.google.com/appengine/docs/java/howto/unittesting.html -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-stubs</artifactId>
+            <version>${gae.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-testing</artifactId>
+            <version>${gae.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+        <testOutputDirectory>target/test-classes</testOutputDirectory>
+        <plugins>
+            <!-- GWT Maven Plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${gwt.version}</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test</goal>
+                            <goal>resources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!-- Plugin configuration. There are many available options, see gwt-maven-plugin
+                    documentation at codehaus.org -->
+                <configuration>
+                    <modules>
+                        <module>com.demo.gae.App</module>
+                    </modules>
+                    <hostedWebapp>${webappDirectory}</hostedWebapp>
+                    <compileReport>true</compileReport>
+                    <copyWebapp>true</copyWebapp>
+                    <localWorkers>2</localWorkers>
+                    <webXml>${baseDir}/${webappDirectory}/WEB-INF/web.xml</webXml>
+
+                    <strict>true</strict><!-- add -strict parameter to the compiler command
 						line -->
-					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs><!-- Extra JVM arguments 
-						that are passed to the GWT-Maven generated scripts (for compiler, shell, 
+                    <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs><!-- Extra JVM arguments
+						that are passed to the GWT-Maven generated scripts (for compiler, shell,
 						etc - typically use -Xmx512m here, or -XstartOnFirstThread, etc). -->
-					<enableClosureCompiler>${gwt.enableClosureCompiler}</enableClosureCompiler><!-- 
-						EXPERIMENTAL: add -XenableClosureCompiler parameter to the compiler command 
+                    <enableClosureCompiler>${gwt.enableClosureCompiler}</enableClosureCompiler><!--
+						EXPERIMENTAL: add -XenableClosureCompiler parameter to the compiler command
 						line -->
-					<disableClassMetadata>${gwt.disableClassMetadata}</disableClassMetadata><!-- 
+                    <disableClassMetadata>${gwt.disableClassMetadata}</disableClassMetadata><!--
 						EXPERIMENTAL: Disables some java.lang.Class methods (e.g. getName()). -->
-					<disableCastChecking>${gwt.disableCastChecking}</disableCastChecking><!-- 
+                    <disableCastChecking>${gwt.disableCastChecking}</disableCastChecking><!--
 						EXPERIMENTAL: Disables run-time checking of cast operations.. -->
-					<logLevel>${gwt.logLevel}</logLevel><!-- GWT logging level (-logLevel 
+                    <logLevel>${gwt.logLevel}</logLevel><!-- GWT logging level (-logLevel
 						ERROR, WARN, INFO, TRACE, DEBUG, SPAM, or ALL). -->
 
-					<!-- URL that should be automatically opened in the GWT shell (gwt:run). -->
-					<runTarget>App.html</runTarget>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<webappDirectory>${webappDirectory}</webappDirectory>
-					<webResources>
-						<resource>
-							<directory>${project.basedir}/src/main/webapp</directory>
-							<excludes>
-								<exclude>template</exclude>
-							</excludes>
-							<filtering>true</filtering>
-						</resource>
-					</webResources>
-				</configuration>
-			</plugin>
-			<!-- Delete gwt generated stuff -->
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>2.3</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>src/main/webapp/app</directory>
-						</fileset>
-						<fileset>
-							<directory>src/main/webapp/WEB-INF/classes</directory>
-						</fileset>
-						<fileset>
-							<directory>tomcat</directory>
-						</fileset>
-						<fileset>
-							<directory>www-test</directory>
-						</fileset>
-						<fileset>
-							<directory>.gwt-tmp</directory>
-						</fileset>
-					</filesets>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.4.2</version>
-				<executions>
-					<execution>
-						<phase>compile</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
-							<resources>
-								<resource>
-									<directory>src/main/webapp</directory>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<!-- GAE Maven Plugin -->
-			<plugin>
-				<groupId>net.kindleit</groupId>
-				<artifactId>maven-gae-plugin</artifactId>
-				<version>${maven.gae.plugin.version}</version>
-				<configuration>
-					<jvmFlags>
-						<jvmFlag>-Xdebug</jvmFlag>
-						<jvmFlag>-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000</jvmFlag>
-						<jvmFlag>-Dmail.log_mail_level=WARNING</jvmFlag>
-						<jvmFlag>-Dmail.log_mail_body=true</jvmFlag>
-					</jvmFlags>
-					<severity>0</severity>
-					<serverId>${google.app.id}</serverId>
-					<configuration>
-						<splitJars>true</splitJars>
-						<unpackVersion>${gae.version}</unpackVersion>
-						<jvmFlags>
-							<jvmFlag>-Dappengine.user.timezone=UTC</jvmFlag>
-						</jvmFlags>
-					</configuration>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>net.kindleit</groupId>
-						<artifactId>gae-runtime</artifactId>
-						<version>${gae.runtime}</version>
-						<type>pom</type>
-					</dependency>
-				</dependencies>
-			</plugin>
-			<!-- compiler plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<source>${maven.compiler.version}</source>
-					<target>${maven.compiler.version}</target>
-					<encoding>${project.encoding}</encoding>
-				</configuration>
-			</plugin>
-			<!-- eclipse plugin -->
-			<plugin>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.8</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<wtpversion>2.0</wtpversion>
-					<additionalBuildcommands>
-						<buildCommand>
-							<name>org.eclipse.jdt.core.javabuilder</name>
-						</buildCommand>
-						<buildCommand>
-							<name>com.google.gdt.eclipse.core.webAppProjectValidator</name>
-						</buildCommand>
-						<buildCommand>
-							<name>com.google.gwt.eclipse.core.gwtProjectValidator</name>
-						</buildCommand>
-					</additionalBuildcommands>
-					<additionalProjectnatures>
-						<projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
-						<projectnature>com.google.gwt.eclipse.core.gaeNature</projectnature>
-					</additionalProjectnatures>
-					<additionalConfig>
-						<file>
-							<name>.settings/com.google.gwt.eclipse.core.prefs</name>
-							<content>
-								<![CDATA[
+                    <!-- URL that should be automatically opened in the GWT shell (gwt:run). -->
+                    <runTarget>App.html</runTarget>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <webappDirectory>${webappDirectory}</webappDirectory>
+                    <webResources>
+                        <resource>
+                            <directory>${project.basedir}/src/main/webapp</directory>
+                            <excludes>
+                                <exclude>template</exclude>
+                            </excludes>
+                            <filtering>true</filtering>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+            <!-- Delete gwt generated stuff -->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>src/main/webapp/app</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>src/main/webapp/WEB-INF/classes</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>tomcat</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>www-test</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>.gwt-tmp</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.2</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/webapp</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- GAE Maven Plugin -->
+            <plugin>
+                <groupId>net.kindleit</groupId>
+                <artifactId>maven-gae-plugin</artifactId>
+                <version>${maven.gae.plugin.version}</version>
+                <configuration>
+                    <serverId>${google.app.id}</serverId>
+                    <splitJars>true</splitJars>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>deploy</id>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- compiler plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>${maven.compiler.version}</source>
+                    <target>${maven.compiler.version}</target>
+                    <encoding>${project.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <!-- eclipse plugin -->
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                    <wtpversion>2.0</wtpversion>
+                    <additionalBuildcommands>
+                        <buildCommand>
+                            <name>org.eclipse.jdt.core.javabuilder</name>
+                        </buildCommand>
+                        <buildCommand>
+                            <name>com.google.gdt.eclipse.core.webAppProjectValidator</name>
+                        </buildCommand>
+                        <buildCommand>
+                            <name>com.google.gwt.eclipse.core.gwtProjectValidator</name>
+                        </buildCommand>
+                    </additionalBuildcommands>
+                    <additionalProjectnatures>
+                        <projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
+                        <projectnature>com.google.gwt.eclipse.core.gaeNature</projectnature>
+                    </additionalProjectnatures>
+                    <additionalConfig>
+                        <file>
+                            <name>.settings/com.google.gwt.eclipse.core.prefs</name>
+                            <content>
+                                <![CDATA[
 eclipse.preferences.version=1
 filesCopiedToWebInfLib=
 							 ]]>
-							</content>
-						</file>
-						<file>
-							<name>.settings/com.google.gdt.eclipse.core.prefs</name>
-							<content>
-								<![CDATA[
+                            </content>
+                        </file>
+                        <file>
+                            <name>.settings/com.google.gdt.eclipse.core.prefs</name>
+                            <content>
+                                <![CDATA[
 eclipse.preferences.version=1
 jarsExcludedFromWebInfLib=
 warSrcDir=${webappDirectory}
 warSrcDirIsOutput=false
 							 ]]>
-							</content>
-						</file>
-					</additionalConfig>
-					<classpathContainers>
-						<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
-						<classpathContainer>com.google.gwt.eclipse.core.GWT_CONTAINER</classpathContainer>
-					</classpathContainers>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+                            </content>
+                        </file>
+                    </additionalConfig>
+                    <classpathContainers>
+                        <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+                        <classpathContainer>com.google.gwt.eclipse.core.GWT_CONTAINER</classpathContainer>
+                    </classpathContainers>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
