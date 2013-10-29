@@ -87,7 +87,7 @@
 					documentation at codehaus.org -->
 				<configuration>
 					<modules>
-						<module>com.personal.project.App</module>
+						<module>${package}.App</module>
 					</modules>
 					<hostedWebapp>${webappDirectory}</hostedWebapp>
 					<compileReport>true</compileReport>
